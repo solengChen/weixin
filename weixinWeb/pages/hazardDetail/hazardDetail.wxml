@@ -1,0 +1,101 @@
+<!--pages/hazardDetail/hazardDetail.wxml-->
+<!-- <view class='top-tab'>
+  <view class="top-tab-item {{currentTopItem==index? 'active' : ''}}" wx:key="item.id" wx:for="{{topTabItems}}" wx:for-index="index" data-idx='{{index}}' bindtap='switchTab'>{{item}}</view>
+</view> -->
+<swiper class='swiper' current='{{currentTopItem}}' bindchange='bindChange' duration='300' style='height:{{swiperHeight}}px'>
+  <swiper-item>
+    <view class='container'>
+      <view class='part_1'>
+        <text class='hazardName'>危险源名{{hazardBean.HazardName}}</text>
+        <text class='hazardAddress'>地址：{{hazardBean.BuildingName}}</text>
+        <view class='time_state'>
+          <text class='hazardCreateTime'>提交时间：{{hazardBean.HazardCreateTime}}</text>
+          <text class='hazardState' wx:if="{{hazardBean.HazardState == '0'}}">待受理</text>
+          <text class='hazardState' wx:elif="{{hazardBean.HazardState == '1'}}">处理中</text>
+          <text class='hazardState' wx:if="{{hazardBean.HazardState == '2'}}">已完成</text>
+        </view>
+        <view class='personInfo'>
+          <text class='hazardSubmitPerson'>提交人：{{hazardBean.UserName}}</text>
+          <text class='hazardPhone'>电话：{{hazardBean.SubmitterPhone}}</text>
+        </view>
+      </view>
+      <view class='part_2'>
+        <text class='hazardStyleTipe'>隐患类型</text>
+        <picker range='{{hazardStyle}}' value='{{styleIndex}}' bindchange='bindChangeStyle'>
+          <text>{{hazardStyle[styleIndex]}}</text>
+        </picker>
+        <view class='navigator-arrow'></view>
+        <button>修改</button>
+      </view>
+      <view class='part_3'>
+        <text class='hazardPlane'>整改记录</text>
+        <view class='navigator-arrow'></view>
+      </view>
+      <view class='part_4'>
+        <text class='discribeTip'>详细情况</text>
+        <text class='discribe'>{{hazardBean.HazardDescribe}}</text>
+      </view>
+      <view class='part_5'>
+        <view class='gradeLine'>
+          <text class='tip'>危险源等级：</text>
+          <text wx:if='!{{hazardBean.HazardGrades}}'>未评级</text>
+          <text wx:elif="{{hazardBean.HazardGrades[0].HazardGrade == '4' }}"class='gradeResult'>安全隐患</text>
+          <text wx:elif="{{hazardBean.HazardGrades[0].HazardGrade == '0' }}" class='gradeResult0'>A级</text>
+          <text wx:elif="{{hazardBean.HazardGrades[0].HazardGrade == '1' }}" class='gradeResult1'>B级</text>
+          <text wx:elif="{{hazardBean.HazardGrades[0].HazardGrade == '2' }} "
+class='gradeResult2'>C级</text>
+          <text wx:elif="{{hazardBean.HazardGrades[0].HazardGrade == '3' }}" class='gradeResult3'>D级</text>
+          <view class='navigator-arrow'></view>
+        </view>
+        <view class="{{hazardBean.HazardGrades.length > 0? gradeHis: ''}}" hidden="{{hazardBean.HazardGrades.length == 0}}">
+          <text>事故或危害事件发生的可能性(L):</text>
+          <text>暴露于危害事件环境的频率(E):</text>
+          <text>事故或危害事件的可能结果(C):</text>
+        </view>
+        <view class='gradeButton'>
+          <text class='chgGrade'>修改等级</text>
+          <text class='hisGrade'>历史等级</text>
+        </view>
+      </view>
+      <view class='part_6'>
+        <view class='finishLine'>
+          <text>点击此按钮开始处理危险源</text>
+          <image src='../../images/icon/ic_start_deal.png'></image>
+        </view>
+        <view class='finishDetail'>
+          <text>危险源处理详情</text>
+          <textarea class='finishDiscribe' maxlength="-1" />
+        </view>
+      </view>
+    </view>
+  </swiper-item>
+  <swiper-item class="swiper2">
+    <view class="header" style='margin-top:-80rpx'>
+      <image class="refresh-icon" src="../../images/ic_refresh.png" animation="{{animationData}}"></image>
+    </view>
+    <view class="footer" animation="{{animationData2}}" id="footer" style='bottom:{{-footerHeight}}px'>
+        <image class="refresh-icon" src="{{footerRefreshIcon}}"></image>
+        <text class='refresh-text'>{{footerText}}</text>
+    </view>
+    <scroll-view class='commentPage' bindscrolltoupper='scrollupper' bindscrolltolower='scrolllower' scroll-y='true' bindscroll='scroll'>
+      <view bindtouchstart='touchStart' bindtouchend='touchEnd' bindtouchmove='touchMove'>
+      <view class='part_7'>
+      <view class='textarea'>
+        <textarea></textarea>
+      </view>
+      <view class='button'>
+        <button>留言</button>
+      </view>
+    </view>
+        <view class='commentItem' wx:for='{{commentData}}' wx:key='item.CommentID' wx:for-item='item'>
+          <text>{{item.UserName}}</text>
+          <text class='commentContent'>{{item.CommentContent}}</text>
+          <text>{{item.CommentCreateTime}}</text>
+        </view>
+        <view class='warming' hidden='{{hasComment}}'>
+         <text>暂无留言</text>
+      </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>

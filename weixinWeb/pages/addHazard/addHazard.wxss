@@ -1,0 +1,95 @@
+/* pages/addHazard/addHazard.wxss */
+.addHazardPage{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.addHazardPage view{
+  top: 10rpx;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.personline,.phoneline,.nameline,.typeline,.buildingline{
+ border-bottom: 1rpx #ddd solid;
+ min-height: 1.4rem;
+ display: flex;
+ bottom: 0rpx;
+}
+.typeline,.buildingline{
+  text-align: middle;
+}
+.typeline picker{
+  align-self: baseline;
+  width: 100%;
+}
+.addHazardPage view text{
+  margin-left: 2%;
+  font-size: 0.7em;
+  color: #7b7b7b;
+  width: 40%;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  align-self: baseline;
+}
+.typeline picker text{
+  color: #333333;
+}
+.addHazardPage .decribeline{
+  flex-wrap: wrap;
+}
+.addHazardPage .decribeline textarea{
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  border: 1rpx #ddd solid;
+  font-size: 0.7em;
+  padding: 5rpx 5rpx 5rpx 5rpx;
+}
+.addHazardPage .decribeline text{
+  margin-left: 2%;
+}
+.addHazardPage .photoline{
+  display: flex;
+  flex-flow: row wrap;
+}
+.addHazardPage .photoline .addPhotoline{
+  width: 96%;
+  flex-flow: row wrap;
+  margin-left: 2%;
+}
+.addHazardPage .addPhotoline .addBtn{
+  width: 18%;
+  margin-right: 1.5%;
+  margin-top: 20rpx;
+}
+.addHazardPage view input{
+  margin-right: 2%;
+  font-size: 0.8em;
+  color: #333333;
+  width: 100%;
+  align-self: baseline;
+}
+.addHazardPage button{
+  width: 70%;
+  margin-top: 50rpx;
+  color: #ffffff;
+  background-color: #EA3223;
+}
+.navigator-arrow {
+  position: relative;
+}
+.navigator-arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 15rpx;
+  width: 15rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #888888;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 30%;
+  margin-top: -8rpx;
+  right: 28rpx;
+}

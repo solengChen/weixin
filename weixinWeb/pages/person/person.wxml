@@ -1,0 +1,21 @@
+<!--pages/person/person.wxml-->
+<view class='personpage'>
+   <view class='personinfo'>
+      <view class='nameline'>
+        <text>姓名：</text>
+        <text>{{userName}}</text>
+        <button>切换</button>
+      </view>
+      <view class='orgline'>
+        <text>机构：</text> 
+        <text>{{orgName}}</text>
+      </view>
+      <view class='roleline'>
+        <text>角色：</text>
+        <text>{{roleName}}</text>
+      </view>
+   </view>
+   <view class='functionline'>
+      <navigator wx:for='{{}}'></navigator>
+   </view>
+</view>

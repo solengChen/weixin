@@ -1,0 +1,43 @@
+/**index.wxss**/
+.userinfo-nickname {
+  color: #aaa;
+}
+page{
+  background-color:#fff;
+  font-size: 40rpx; 
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+input{
+  border: 1px solid #ddd;
+  line-height: 80rpx;
+  height: 80rpx;
+  width: 80%;
+  margin: 5% auto;
+  padding-left:20rpx; 
+}
+.button-hover {
+  background-color: #b02923;
+  color: #fff;
+}
+.login{
+  background-color: #b02923;
+  color: #fff;
+  top:200rpx;
+  width: 80%;
+}
+.userError{
+  border-color: #b02923
+}
+.picker{
+  font-size: 0.6em
+}

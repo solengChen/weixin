@@ -1,0 +1,61 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.7.2",
+	"appid": "wx93725baa83c32d8d",
+	"projectname": "weixinWeb",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "hazardDetail",
+					"pathName": "pages/hazardDetail/hazardDetail",
+					"query": "token=8VD6F680Z44N6260ZP8T42H44J2R6X6P0Z8B062JZN6F4NZ666&hazardID=H_b3e0b08caf000001"
+				},
+				{
+					"id": 1,
+					"name": "maplist",
+					"pathName": "pages/main/maplist",
+					"query": "token=8VD6F680Z44N6260ZP8T42H44J2R6X6P0Z8B062JZN6F4NZ666"
+				},
+				{
+					"id": -1,
+					"name": "map",
+					"pathName": "pages/map/map",
+					"query": "token=8VD6F680Z44N6260ZP8T42H44J2R6X6P0Z8B062JZN6F4NZ666"
+				},
+				{
+					"id": -1,
+					"name": "addhazard",
+					"pathName": "pages/addHazard/addHazard",
+					"query": ""
+				}
+			]
+		}
+	}
+}

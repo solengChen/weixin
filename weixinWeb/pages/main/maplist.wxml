@@ -1,0 +1,34 @@
+<!--maplist.wxml-->
+<view class="scrollView" onReachBottom="loadMoreData">
+   <view class="hazardList bg-white"> 
+     <view wx:for="{{hazards}}" wx:key="item.HazardID" wx:for-item="item">
+         <navigator class="hazardList-item" url="../hazardDetail/hazardDetail?token={{token}}&id={{item.HazardID}}">
+           <view class="hazardList-item-top">
+              <text class="hazard-time">{{item.HazardCreateTime}}</text>
+              <text class="hazard-tip">危险等级</text>
+              <text class="hazard-grade hazard-grade-before" wx:if="{{item.HazardGrade.length == 0}}">未评级</text>
+              <text class="hazard-grade hazard-grade0" wx:elif="{{item.HazardGrade[0].HazardGrade == '0'}}">安全隐患</text>
+              <text class="hazard-grade hazard-grade1" wx:elif="{{item.HazardGrade[0].HazardGrade == '1'}}">A级</text>
+              <text class="hazard-grade hazard-grade2" wx:elif="{{item.HazardGrade[0].HazardGrade == '2'}}">B级</text>
+              <text class="hazard-grade hazard-grade3" wx:elif="{{item.HazardGrade[0].HazardGrade == '3'}}">C级</text>
+              <text class="hazard-grade hazard-grade4" wx:elif="{{item.HazardGrade[0].HazardGrade == '4'}}">D级</text>
+           </view>
+           <view class="hazardList-item-middel">
+              <text class='hazard-item-name'>{{item.HazardName}}</text>
+              <text class="hazard-grade hazard-state0" wx:if="{{item.HazardState === '0'}}">待受理</text>
+              <text class="hazard-grade hazard-state1" wx:elif="{{item.HazardState === '1'}}">处理中</text>
+              <text class="hazard-grade hazard-state2" wx:elif="{{item.HazardState === '0'}}">已处理</text>
+           </view>
+           <text class='hazard-item-desc'>{{item.HazardDescribe}}</text>
+        </navigator>
+     </view>
+   </view> 
+   <view class="footer" wx:if="{{!no_more}}" hidden='{{!isUpLoading}}'>
+      <image class="refresh-icon" src="../../images/refresh-007.gif"></image>
+      <text class="refresh-text"> 加载更多...</text>
+   </view>
+   <view class="footer" wx:elif="{{no_more}}" hidden='{{!no_more}}'>
+      <text class="refresh-text">没有了</text>
+   </view>
+</view>
+

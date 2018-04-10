@@ -1,0 +1,47 @@
+/* pages/map/map.wxss */
+page{
+  background-color:#fff;
+  font-size: 40rpx; 
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+input{
+  border: 1px solid #ddd;
+  line-height: 80rpx;
+  height: 80rpx;
+  width: 80%;
+  margin: 5% auto;
+  padding-left:20rpx; 
+  border-radius: 20%;
+}
+.button-hover {
+  background-color: #b02923;
+  color: #fff;
+}
+button{
+  background-color: #b02923;
+  color: #fff;
+  top:200rpx;
+  width: 80%;
+}
+.userError{
+  border-color: #b02923
+}
+.addHazard{
+  position: fixed;
+  top: 30rpx;
+  left: 30rpx;
+}
+.addHazardBtn{
+  height: 60rpx;
+  width: 60rpx;
+}

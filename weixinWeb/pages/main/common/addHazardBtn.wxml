@@ -1,0 +1,5 @@
+<template name="addHazard">
+  <view class='addHazard' bindtap='jumpToAddHazard'>
+    <image class='addHazardBtn' src='../../../images/plus.png'></image>
+  </view>
+</template>

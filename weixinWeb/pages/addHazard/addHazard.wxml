@@ -1,0 +1,41 @@
+<!--pages/addHazard/addHazard.wxml-->
+<view class='addHazardPage'>
+  <view class='personline'>
+    <text>发布人</text>
+    <input value='{{personName}}'></input>
+  </view>
+  <view class='phoneline'>
+    <text>联系电话</text>
+    <input value='{{phoneNum}}'></input>
+  </view>
+  <view class='nameline'>
+    <text>危险源名称</text>
+    <input></input>
+  </view>
+  <view class='typeline'>
+    <text>隐患类型</text>
+    <picker range='{{hazardType}}' value='{{typeIndex}}' bindchange='bindChangeType'>
+       <text>{{hazardType[typeIndex]}}</text>
+    </picker>
+  </view>
+  <view class='buildingline'>
+    <text>选择楼宇</text>
+    <view class='navigator-arrow'></view>
+  </view>
+  <view class='decribeline'>
+    <text>详细说明</text>
+    <textarea></textarea>
+  </view>
+  <view class='photoline'>
+    <text>现场照片</text>
+     <view class='addPhotoline'>
+    
+       <image wx:for='{{addbtnviews}}' wx:key='item.btnid' wx:for-item='item' id="{{item.btnid}}" class='addBtn' style='height:{{addButtonHeight}}px' src='{{item.imagepath}}' bindtap='addphoto' bindlongtap='checkOrRemove'></image>
+    </view> 
+    <!-- <view class='addPhotoline'>
+    
+       <image id="addbtnview" class='addBtn' style='height:{{addButtonHeight}}px' src='../../images/ic_addpic.png' bindtap='addphoto'></image>
+    </view> -->
+  </view>
+  <button>发布</button>
+</view>

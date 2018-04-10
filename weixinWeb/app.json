@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/map/map",
+    "pages/main/maplist",
+    "pages/logs/logs",
+    "pages/buy/buywine",
+    "pages/orders/orders",
+    "pages/person/person",
+    "pages/hazardDetail/hazardDetail",
+    "pages/addHazard/addHazard"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/map/map",
+        "text": "地图",
+        "iconPath": "images/icon/map_A.png",
+        "selectedIconPath": "images/icon/map_B.png"
+      },
+      {
+        "pagePath": "pages/main/maplist",
+        "text": "列表",
+        "iconPath": "images/icon/notice_A.png",
+        "selectedIconPath": "images/icon/notice_B.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "用户",
+        "iconPath": "images/icon/personal_A.png",
+        "selectedIconPath": "images/icon/personal_B.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#99A2E9",
+    "navigationBarTitleText": "危险源",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#eeeeee"
+  }
+}

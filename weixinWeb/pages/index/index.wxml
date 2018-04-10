@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class='container'>
+    <view class='userinfo'>
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo"        bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+
+    <form bindsubmit='formSubmit' bindreset='formReset'>
+        <view class='section'>
+            <input name="userPhone" class="{{ userPhone == true ? 'userError' : ''}}" type='text' maxlength='11' placeholder='请输入账号'></input>
+            <input name="userPWD" class="{{ userPWD == true ? 'userError' : ''}}" type='text' password maxlength='100' placeholder='请输入密码'></input>
+        </view>
+        <button class='login' type='default' form-type='submit'>登录   </button>
+    </form>
+    <!-- <picker bindchange="bindPickerRole" value="{{num}}" range="{{roles}}"><text class="picker" hidden="{{!loginSuccess}}">{{roles[num]}}</text></picker> -->
+</view>
+
